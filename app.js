@@ -9,6 +9,10 @@ app.use(cors());
 
 const url = 'https://favershamweather.org/pwsWD/index.php';
 
+app.get('/', (req, res) => {
+  res.json('Weather Data');
+});
+
 app.get('/data', (req, res) => {
   axios(url).then((response) => {
     const html = response.data;
